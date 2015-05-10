@@ -95,4 +95,5 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" 
 " colorscheme
 colorscheme desert
 
-"
+"NERDTree
+nnoremap <leader>t :NERDTree<cr>
