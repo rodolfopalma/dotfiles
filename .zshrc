@@ -91,3 +91,6 @@ export GOPATH
 
 # fuck...
 alias fuck='$(thefuck $(fc -ln -1))'
+
+# open
+alias op='$(gnome-open .)'

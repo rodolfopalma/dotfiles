@@ -32,6 +32,7 @@ set backspace=indent,eol,start
 set number
 set laststatus=2
 set undofile
+set relativenumber
 
 " remap leader key
 let mapleader=","
@@ -75,25 +76,22 @@ vnoremap <F1> <ESC>
 set gfn=Source\ Code\ Pro\ 10
 
 " ultisnips, snippets completed on return
-let g:UltiSnipsExpandTrigger = "<nop>"
-let g:ulti_expand_or_jump_res = 0
+let g:ycm_key_list_select_completion = ['<C-n>']
+let g:ycm_key_list_previous_completion = ['<C-p>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
-function ExpandSnippetOrCarriageReturn()
-    let snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-        return snippet
-    else
-        return "\<CR>"
-    endif
-endfunction
-
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
-inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " colorscheme
 colorscheme desert
 
 "NERDTree
-nnoremap <leader>t :NERDTree<cr>
+nnoremap <leader>t :NERDTreeToggle<cr>
+
+" python-mode
+let g:pymode_python = 'python'
+let g:pymode_rope_completion = 0
+let g:pymode_folding = 0
+nnoremap <leader>q :!python3 "%" &<cr>
