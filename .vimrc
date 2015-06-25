@@ -76,22 +76,19 @@ vnoremap <F1> <ESC>
 set gfn=Source\ Code\ Pro\ 10
 
 " ultisnips, snippets completed on return
-let g:ycm_key_list_select_completion = ['<C-n>']
-let g:ycm_key_list_previous_completion = ['<C-p>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " colorscheme
-colorscheme desert
+colorscheme Monokai-chris
+
 
 "NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>
 
 " python-mode
-let g:pymode_python = 'python'
+let g:pymode_python = 'python3'
 let g:pymode_rope_completion = 0
 let g:pymode_folding = 0
 nnoremap <leader>q :!python3 "%" &<cr>
+
+nnoremap ´ {
+nnoremap ç }
