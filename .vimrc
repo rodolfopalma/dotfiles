@@ -16,20 +16,19 @@ set softtabstop=4
 set expandtab
 
 " random stuff
-set encoding=utf-8
-set scrolloff=3
-set autoindent
+set encoding=utf-8              " set encoding
+set scrolloff=3                 " offset line position 3 lines beneath top
+set autoindent                  " who doesn't love auto indent?
 set showmode
 set showcmd
-set hidden
-set wildmenu
-set wildmode=list:longest
+set nohidden                    " when closing tabs, delete buffer
+set wildmenu                    " menu tab completion
+set wildmode=list:longest,full
 set visualbell
-set cursorline
+set cursorline                  " highlight current line
 set ttyfast
 set ruler
 set backspace=indent,eol,start
-set number
 set laststatus=2
 set undofile
 set relativenumber
@@ -53,7 +52,7 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80
 
 " good habits
 nnoremap <up> <nop>
@@ -75,20 +74,50 @@ vnoremap <F1> <ESC>
 " source code pro
 set gfn=Source\ Code\ Pro\ 10
 
-" ultisnips, snippets completed on return
-
 " colorscheme
 colorscheme Monokai-chris
 
-
 "NERDTree
-nnoremap <leader>t :NERDTreeToggle<cr>
-
-" python-mode
-let g:pymode_python = 'python3'
-let g:pymode_rope_completion = 0
-let g:pymode_folding = 0
-nnoremap <leader>q :!python3 "%" &<cr>
+nnoremap <leader>nt :NERDTreeToggle<cr>
 
 nnoremap ´ {
 nnoremap ç }
+
+" swap, backup, undo folders
+set undodir=~/.vim/.undo//,.
+set directory=~/.vim/.swp//,.
+set backupdir=~/.vim/backup//,.
+
+" code folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <leader>f za
+
+" splitted windows movement
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+
+" tasklist
+nnoremap <leader>td :TaskList<cr>
+
+" PEP8
+let g:pep8_map='<leader>8'
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ["flake8"]
+
+" neocomplete + jedi-vim
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
