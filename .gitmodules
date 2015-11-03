@@ -49,3 +49,21 @@
 [submodule ".vim/bundle/vim-stylus"]
 	path = .vim/bundle/vim-stylus
 	url = https://github.com/wavded/vim-stylus.git
+[submodule ".vim/bundle/splitjoin"]
+	path = .vim/bundle/splitjoin
+	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/vim-flavored-markdown"]
+	path = .vim/bundle/vim-flavored-markdown
+	url = https://github.com/jtratner/vim-flavored-markdown.git
+[submodule ".vim/bundle/vim-livedown"]
+	path = .vim/bundle/vim-livedown
+	url = https://github.com/shime/vim-livedown.git
+[submodule ".vim/bundle/vim-latex-live-preview"]
+	path = .vim/bundle/vim-latex-live-preview
+	url = https://github.com/xuhdev/vim-latex-live-preview.git
+[submodule ".vim/bundle/dracula-theme"]
+	path = .vim/bundle/dracula-theme
+	url = https://github.com/zenorocha/dracula-theme.git

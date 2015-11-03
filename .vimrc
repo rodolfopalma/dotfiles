@@ -71,7 +71,7 @@ vnoremap <F1> <ESC>
 set gfn=Source\ Code\ Pro\ 10
 
 " colorscheme
-colorscheme Monokai-chris
+color Dracula
 
 "NERDTree
 nnoremap <leader>nt :NERDTreeToggle<cr>
@@ -119,7 +119,6 @@ let g:jedi#force_py_version = 3
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
-let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 " tagbar
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
@@ -134,7 +133,11 @@ let g:go_fmt_command = "goimports"
 " NERDCommenter
 let NERDSpaceDelims=1
 
-if $TERM_PROGRAM =~ "iTerm"
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-endif
+" Markdown flavored syntax
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+" Live latex compiler
+let g:livepreview_previewer = "open -a Preview"
