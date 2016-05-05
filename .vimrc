@@ -13,7 +13,7 @@ set modelines=0
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+autocmd FileType python set expandtab
 
 " random stuff
 set encoding=utf-8              " set encoding
