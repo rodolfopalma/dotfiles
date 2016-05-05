@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/rodolfo/.oh-my-zsh
+export ZSH=/Users/rodolfo/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -82,15 +82,15 @@ source $ZSH/oh-my-zsh.sh
 #############################################
 
 # path...
-PATH=$PATH:/usr/local/go/bin:$HOME/drive/dev/go/bin
+PATH=$PATH:/usr/local/go/bin:$HOME/dev/go/bin:/Library/TeX/texbin
 export PATH
 
 # gopath...
-GOPATH=$HOME/drive/dev/go
+GOPATH=$HOME/dev/go
 export GOPATH
 
 # fuck...
 alias fuck='$(thefuck $(fc -ln -1))'
 
-# open
-alias op='$(gnome-open .)'
+export NVM_DIR="/Users/rodolfo/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
